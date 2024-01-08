@@ -12,16 +12,19 @@ void ReiseBuero::benutzer_Dialog() {
     std::cout << "3: Alle Buchungen anzeigen" << std::endl;
     std::cout << "0: Programm beenden" << std::endl;
 
-    while ()
-    std::cout << "Auswahl: ";
-    std::cin >> input;
+    while (true) {
+        std::cout << "Auswahl: ";
+        std::cin >> input;
 
-    if ()
-
+        if (!check_Input(input)) {
+            continue;
+        }
+        std::cout << "Entered correct input: " << input << std::endl;
+    }
 
 }
 
-bool check_Input(int input) {
+bool ReiseBuero::check_Input(int input) {
     if (input < 0 || input > 3) {
         std::cout << "Ungueltige Eingabe." << std::endl;
         return false;

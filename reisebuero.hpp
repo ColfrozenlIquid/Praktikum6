@@ -12,5 +12,6 @@ class ReiseBuero {
     protected:
 
     private:
+        bool check_Input(int input);
         std::vector<Buchung*> m_buchungen;
 };
