@@ -1,12 +1,10 @@
 #pragma once
 #include <string>
+#include <iostream>
 
 class Buchung {
     public:
-        Buchung();
-        Buchung(Buchung& buchung);
-        ~Buchung();
-        virtual void zeige_Details();
+        virtual void zeige_Details() = 0;
 
     protected:
         std::string m_buchungs_Nummer;
