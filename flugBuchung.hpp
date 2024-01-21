@@ -10,6 +10,7 @@ class FlugBuchung : public Buchung {
         FlugBuchung(const FlugBuchung& FlugBuchung);
         ~FlugBuchung();
         void zeige_Details();
+        void generate_Buchung(std::string buchung_ID);
     
     protected:
 

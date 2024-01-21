@@ -9,7 +9,8 @@ class HotelBuchung : public Buchung {
         HotelBuchung(int buchung_nummer, std::string nachname, std::string vorname, std::string hotel_name, char zimmer_typ);
         HotelBuchung(const HotelBuchung& hotelbuchung);
         ~HotelBuchung();
-        void zeige_Details() override;
+        void zeige_Details();
+        void generate_Buchung(std::string buchung_ID);
 
         void set_Buchung_Nummer(int buchung_nummer);
         void set_Nachname(std::string nachname);

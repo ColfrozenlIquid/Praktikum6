@@ -33,6 +33,31 @@ void HotelBuchung::zeige_Details() {
 
 }
 
+void HotelBuchung::generate_Buchung(std::string buchung_ID) {
+    std::string nachname;
+    std::string vorname;
+    std::string hotel_name;
+    char zimmer_typ;
+
+    std::cout << "Hotelbuchung erstellen: " << std::endl;
+    std::cout << "Nachname: " << std::endl;
+    std::cin >> nachname;
+    std::cout << "Vorname: " << std::endl;
+    std::cin >> vorname;
+    std::cout << "Hotel Name: " << std::endl;
+    std::cin >> hotel_name;
+    std::cout << "Zimmer typ: " << std::endl;
+    std::cin >> zimmer_typ;
+
+    std::cout << "Buchung ID is: " << buchung_ID << std::endl;
+
+    m_buchungs_Nummer = buchung_ID;
+    m_nachname = nachname;
+    m_vorname = vorname;
+    m_hotel_Name = hotel_name;
+    m_zimmer_Typ = zimmer_typ;
+}
+
 void HotelBuchung::set_Buchung_Nummer(int buchung_nummer) {
     m_buchungs_Nummer = buchung_nummer;
 }

@@ -32,3 +32,34 @@ void FlugBuchung::zeige_Details() {
     std::cout << "Nach: \t"                     << m_nach << std::endl;
     // std::cout << "Datum: \t"        << m_datum << std::endl;
 }
+
+void FlugBuchung::generate_Buchung(std::string buchung_ID) {
+    std::string nachname;
+    std::string vorname;
+    std::string fluglinie;
+    std::string sitz_platz;
+    std::string von;
+    std::string nach;
+
+    std::cout << "Flugbuchung erstellen: " << std::endl;
+    std::cout << "Nachname: " << std::endl;
+    std::cin >> nachname;
+    std::cout << "Vorname: " << std::endl;
+    std::cin >> vorname;
+    std::cout << "Fluglinie: " << std::endl;
+    std::cin >> fluglinie;
+    std::cout << "Sitzplatz: " << std::endl;
+    std::cin >> sitz_platz;
+    std::cout << "Von: " << std::endl;
+    std::cin >> von;
+    std::cout << "Nach: " << std::endl;
+    std::cin >> nach;
+
+    m_buchungs_Nummer = buchung_ID;
+    m_nachname = nachname;
+    m_vorname = vorname;
+    m_fluglinie = fluglinie;
+    m_sitz_platz = sitz_platz;
+    m_von = von;
+    m_nach = nach;
+}
