@@ -24,12 +24,11 @@ void ReiseBuero::benutzer_Dialog() {
         case 1:
             add_Buchung();
             break;
-        case 2:
-            //buchungdetails ausgeben
+        case 2: //buchungdetails ausgeben
             show_Buchung_Details();
             break;
-        case 3:
-            //alle buchung anzeigen
+        case 3: //alle buchungen anzeigen
+            show_Alle_Buchung();
             break;
         case 0:
             exit(0);
@@ -49,9 +48,29 @@ bool ReiseBuero::check_Input(int input, int min, int max) {
     return true;
 }
 
-void ReiseBuero::show_Buchung_Details() {
+void ReiseBuero::show_Alle_Buchung() {
     for (Buchung* buchung : m_buchungen) {
-        buchung->zeige_Details();
+        std::cout << buchung->get_Buchung_Type() << ": "<< buchung->get_Buchung_Nummer() << std::endl;
+    }
+}
+
+void ReiseBuero::show_Buchung_Details() {
+    std::string input;
+
+    std::cout << "Welche Buchung moechten Sie anschauen: " << std::endl;
+    std::cin >> input;
+
+    get_Buchung_By_BuchungID(input);
+}
+
+void ReiseBuero::get_Buchung_By_BuchungID(std::string buchung_ID) {
+    for (auto buchung : m_buchungen) {
+        if (buchung->get_Buchung_Nummer() == buchung_ID) {
+            buchung->zeige_Details();
+        }
+        else {
+            std::cout << "Buchung konnte im system nicht gefunden werden" << std::endl;
+        }
     }
 }
 
@@ -92,14 +111,6 @@ void ReiseBuero::add_Buchung() {
             return;
         }
     }
-}
-
-void ReiseBuero::generate_Hotel_Buchung() {
-
-}
-
-void ReiseBuero::generate_Flug_Buchung() {
-    
 }
 
 std::string ReiseBuero::get_Buchung_Capacity() {

@@ -9,18 +9,18 @@ class ReiseBuero {
     public:
         ReiseBuero();
         ~ReiseBuero();
+
         void benutzer_Dialog();
         void add_Buchung();
-
         std::string get_Buchung_Capacity();
 
     protected:
 
     private:
-        bool check_Input(int input, int min, int max);
-        std::vector<Buchung*> m_buchungen; 
+        std::vector<Buchung*> m_buchungen;
 
+        bool check_Input(int input, int min, int max);
+        void show_Alle_Buchung();
         void show_Buchung_Details();
-        void generate_Hotel_Buchung();
-        void generate_Flug_Buchung();
+        void get_Buchung_By_BuchungID(std::string buchung_ID);
 };
